@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-image: url('bg1.jpg');
+            background-size: cover;
+            background-position: center center;
+            background-attachment: fixed;
+            margin: 0; /* Set margin to zero to remove default margin */
+        }
+    </style>
+</head>
+<body>
+    <canvas id="myCanvas" width="800" height="600"></canvas>
+    <!-- Your content goes here -->
+
+    <script>
+        const canvas = document.getElementById("myCanvas");
+        const ctx = canvas.getContext("2d");
+
+        // Calculate the center coordinates for the rectangle
+        const centerX = canvas.width / 2;
+        const centerY = canvas.height / 2;
+        const rectWidth = 430;
+        const rectHeight = 200;
+        const rectX = centerX - rectWidth / 2;
+        const rectY = centerY - rectHeight / 2;
+
+        ctx.beginPath();
+        ctx.strokeStyle = "red";
+        ctx.lineWidth = 1;
+        ctx.rect(rectX, rectY, rectWidth, rectHeight);
+        ctx.stroke();
+
+        // Draw the Olympic Games logo circles
+        ctx.beginPath();
+        ctx.arc(centerX - 75, centerY, 45, 0, Math.PI * 2); // Blue circle
+        ctx.fillStyle = "blue";
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.arc(centerX + 75, centerY, 45, 0, Math.PI * 2); // Black circle
+        ctx.fillStyle = "black";
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.arc(centerX, centerY - 75, 45, 0, Math.PI * 2); // Red circle
+        ctx.fillStyle = "red";
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.arc(centerX - 37.5, centerY + 75, 45, 0, Math.PI * 2); // Yellow circle (left)
+        ctx.fillStyle = "yellow";
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.arc(centerX + 37.5, centerY + 75, 45, 0, Math.PI * 2); // Green circle (right)
+        ctx.fillStyle = "green";
+        ctx.fill();
+    </script>
+</body>
+</html>
